@@ -1,22 +1,30 @@
-# Faça um programa que leia um número inteiro n e então leia n linhas contendo
-# informações sobre produtos separados por ponto-e-vírgula. Use funções de strings
-# para:
-# a. Remover os valores entre o primeiro e o segundo símbolo de ponto-e-vírgula;
-# b. Converter o nome do produto para maiúsculo;
-# c. Substituir “/home/” por “C:/Users/”.
-# Mostre na tela os resultados das operações
+# Faça um programa que leia um número inteiro n e então 
+# leia n linhas contendo informações sobre produtos separados por ponto-e-vírgula. 
+# Mostre na tela o número de produtos de cada categoria. 
+# Assuma que as categorias podem ser escritas em diferentes casos (minúsculo, maiúsculo, etc.).
 
 def main():
-    res = []
-    n = int(input("Informe o numero de produtos: "))
+    check = 0
+    categorias = []
 
+    n = int(input())
+        
     for i in range(n):
-        arrayStr = input("Informe o produto: ").split(";")
+        cat = input().split(";")[1].lower()
+        
+        for j in range(len(categorias)):
+            if cat == categorias[j][0]:
+                categorias[j][1] += 1
+                check = 1
+                break
 
-        for j in range(2, len(arrayStr[i])):
-            res.append(arrayStr[i])
+        if check == 0:
+            categorias.append([f'{cat}', 1])
 
-    print(res)
+        check = 0
 
+    for i in range(len(categorias)):
+        print(f'{categorias[i][0]}: {categorias[i][1]}')
+        
 if __name__ == '__main__':
     main()
