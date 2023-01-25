@@ -20,10 +20,7 @@ def orderList(lista):
 def main():
     lista = []
     for _ in range(3):
-        lista.append(input()) 
-
-    for e in range(len(lista)): 
-        lista[e] = int(lista[e])
+        lista.append(int(input())) 
 
     orderList(lista)
     

@@ -16,8 +16,6 @@
 # O objetivo da questão é avaliar a capacidade do aluno de criar classes e objetos, 
 # e de manipular listas de objetos.
 
-from decimal import Decimal as D
-
 PI = 3.1415
 
 class Circulo:
