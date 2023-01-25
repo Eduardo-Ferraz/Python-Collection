@@ -18,10 +18,13 @@ def find_index_min(L):
     return i_min
 
 def main():
-    L = (3, 7, 0, 5, 1, 2, 19)
+    L = input().split()
 
-    print(find_index_max(L))
+    for i in range(len(L)):
+        L[i] = float(L[i])
+
     print(find_index_min(L))
+    print(find_index_max(L))
 
 if __name__ == "__main__":
     main()
