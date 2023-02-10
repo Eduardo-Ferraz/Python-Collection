@@ -11,7 +11,7 @@
 # o segundo menor na posição 1, o terceiro menor na posição 2 e assim por diante. 
 # Este algoritmo de ordenação é chamado de ordenação por seleção.
 
-def tradeFrom(lista, i):
+def tradeFrom(lista: list, i: int):
     menor = lista[i]
     indexMenor = i
 
@@ -25,22 +25,21 @@ def tradeFrom(lista, i):
     lista[indexMenor] = hold
 
 def orderList(lista):
+    for e in range(len(lista)): 
+        lista[e] = float(lista[e])
+
     for i in range(len(lista)):
         tradeFrom(lista, i)
+
+    return lista
 
 def main():
     lista = input().split()
 
-    for e in range(len(lista)): 
-        lista[e] = float(lista[e])
-
-    orderList(lista)
+    listaOrdenada = orderList(lista)
     
-    for e in range(len(lista)): 
-        lista[e] = str(lista[e])
+    for num in listaOrdenada:
+        print(f'{num:.2f}', end=" ")
 
-    lista = '0 '.join(lista) + '0'
-
-    print(lista)
 if __name__ == '__main__':
     main()
